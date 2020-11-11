@@ -6,7 +6,7 @@ std::vector<int> digits;
 
 std::tuple<int, int> orderDigits(int num) 
 {   
-    digits.clear();
+    digits.clear(); 
     int retValue = 0, remaning = num;
     for(int i = 0; i< 4; i++){
         if (remaning == 0)
@@ -29,7 +29,7 @@ std::tuple<int, int> orderDigits(int num)
 int kaprekar (int target, int deep = 1){
     std::tuple<int, int> ordered= orderDigits(target);
     int c = std::abs(std::get<0>(ordered)-std::get<1>(ordered));
-    std::cout << deep << " " << std::get<0>(ordered) << " " << std::get<1>(ordered) << " " << c << std::endl;
+    //std::cout << deep << " " << std::get<0>(ordered) << " " << std::get<1>(ordered) << " " << c << std::endl;
     if (c == KAPREKAR)
         return deep;
     return kaprekar(c, ++deep);
